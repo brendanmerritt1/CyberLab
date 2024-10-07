@@ -10,7 +10,7 @@ export default function Homepage() {
           <div className="flex w-96 flex-col gap-16">
             <Card
               title="AWS Suite"
-              image="/src/assets/images/AWS-logo.png"
+              image="/AWS-logo.png"
               alt="AWS Logo"
               width="w-64"
               button="CyberLab"
@@ -19,7 +19,7 @@ export default function Homepage() {
             />
             <Card
               title="Splunk"
-              image="/src/assets/images/Splunk-logo.png"
+              image="/Splunk-logo.png"
               alt="Splunk Enterprise Logo"
               width="w-72"
               button="Splunk SIEM"
@@ -28,7 +28,7 @@ export default function Homepage() {
             />
             <Card
               title="Tenable"
-              image="/src/assets/images/Splunk-logo.png"
+              image="/Splunk-logo.png"
               alt="Splunk Enterprise Logo"
               width="w-72"
               button="Splunk SIEM"
@@ -39,7 +39,7 @@ export default function Homepage() {
           <div className="flex w-96 flex-col gap-16">
             <Card
               title="Labs / Projects Board"
-              image="/src/assets/images/Microsoft-Planner-logo.png"
+              image="/Microsoft-Planner-logo.png"
               alt="Microsoft Planner logo"
               width="w-28"
               button="Planner Board"
@@ -48,7 +48,7 @@ export default function Homepage() {
             />
             <Card
               title="A Cloud Guru"
-              image="/src/assets/images/acloudguru-logo.png"
+              image="/acloudguru-logo.png"
               alt="A Cloud Guru logo"
               width="w-44"
               button="Courses"
@@ -57,7 +57,7 @@ export default function Homepage() {
             />
             <Card
               title="A Cloud Guru"
-              image="/src/assets/images/acloudguru-logo.png"
+              image="/acloudguru-logo.png"
               alt="A Cloud Guru logo"
               width="w-44"
               button="Courses"
@@ -68,7 +68,7 @@ export default function Homepage() {
           <div className="flex w-96 flex-col gap-16">
             <Card
               title="CrowdStrike Falcon"
-              image="/src/assets/images/crowdstrike-logo.png"
+              image="/crowdstrike-logo.png"
               alt="CrowdStrike Falcon logo"
               width="w-44"
               button="Dashboard"
@@ -77,7 +77,7 @@ export default function Homepage() {
             />
             <Card
               title="Udemy"
-              image="/src/assets/images/udemy-logo.png"
+              image="/udemy-logo.png"
               alt="Udemy logo"
               width="w-48"
               button="Courses"
@@ -86,7 +86,7 @@ export default function Homepage() {
             />
             <Card
               title="Udemy"
-              image="/src/assets/images/udemy-logo.png"
+              image="/udemy-logo.png"
               alt="Udemy logo"
               width="w-48"
               button="Courses"

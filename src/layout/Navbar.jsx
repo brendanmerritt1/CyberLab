@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="flex w-full flex-row">
         <div className="flex h-full w-1/2 flex-row items-center justify-start gap-14 pl-20">
           <img
-            src="/src/assets/images/TC-Logo-with-white-text.svg"
+            src="/TC-Logo-with-white-text.svg"
             alt="Triangle Cyber Logo"
             className="h-20"
           />
