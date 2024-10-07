@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Squash as Hamburger } from 'hamburger-react';
 import { FaChevronRight } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
+import tcLogo from "../assets/images/TC-Logo-with-white-text.svg"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Navbar() {
       <div className="flex w-full flex-row">
         <div className="flex h-full w-1/2 flex-row items-center justify-start gap-14 pl-20">
           <img
-            src="/TC-Logo-with-white-text.svg"
+            src={tcLogo}
             alt="Triangle Cyber Logo"
             className="h-20"
           />
