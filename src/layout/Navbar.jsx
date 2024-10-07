@@ -1,24 +1,52 @@
+import { useState } from 'react';
+import { Squash as Hamburger } from 'hamburger-react';
+import { FaChevronRight } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div class="mt-5 flex h-auto flex-col items-center gap-10">
-      <div class="flex w-full flex-row">
-        <div class="h-full w-1/4">{/* empty placeholder space */}</div>
-        <div class="flex h-full w-1/2 flex-row items-center justify-center gap-14 pr-36">
+    <div className="mt-5 flex h-auto flex-col items-center gap-10">
+      <div className="flex w-full flex-row">
+        <div className="flex h-full w-1/2 flex-row items-center justify-start gap-14 pl-20">
           <img
             src="/src/assets/images/TC-Logo-with-white-text.svg"
             alt="Triangle Cyber Logo"
-            class="h-20"
+            className="h-20"
           />
-          <h1 class="text-7xl font-bold">CyberLab</h1>
+          <h1 className="text-7xl font-bold">CyberLab</h1>
         </div>
-        <div class="h-full w-1/4">
-          {/* login/register buttons will go here */}
+        <div className="flex h-auto w-1/2 flex-row items-center justify-end gap-24 pr-20">
+          <div
+            className={`${isOpen ? '' : 'hidden'} w-5/6 overflow-x-hidden text-2xl font-semibold underline`}
+          >
+            <motion.nav
+              initial={{ x: '100%' }}
+              animate={{ x: isOpen ? 0 : '100%' }}
+              transition={{ type: 'tween', duration: 0.5 }}
+              className="flex h-full w-full flex-row items-center justify-between"
+            >
+              <h2 className="cursor-pointer">Home</h2>
+              <h2 className="cursor-pointer">Learning Tracks</h2>
+              <h2 className="cursor-pointer">SkillBridge</h2>
+              <button className="flex h-14 w-40 flex-row items-center justify-between rounded-full bg-[#163f44] p-4 no-underline">
+                Login
+                <FaChevronRight size={'1.25rem'} />
+              </button>
+            </motion.nav>
+          </div>
+          <Hamburger
+            size={42}
+            color="#b9d2ee"
+            toggled={isOpen}
+            toggle={toggleNav}
+          />
         </div>
-      </div>
-      <div class="flex h-full w-[60rem] ml-12 flex-row items-center justify-around text-2xl font-semibold underline">
-        <h2>Home</h2>
-        <h2>Learning Tracks</h2>
-        <h2>SkillBridge</h2>
       </div>
     </div>
   );
