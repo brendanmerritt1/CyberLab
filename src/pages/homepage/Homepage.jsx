@@ -1,5 +1,12 @@
 import Navbar from '../../layout/Navbar.jsx';
 import Card from '../../components/Card.jsx';
+import aws from "../../assets/images/AWS-logo.png"
+import splunk from "../../assets/images/Splunk-logo.png"
+import tenable from "../../assets/images/Splunk-logo.png"
+import planner from "../../assets/images/Microsoft-Planner-logo.png"
+import acg from "../../assets/images/acloudguru-logo.png"
+import crowdstrike from "../../assets/images/crowdstrike-logo.png"
+import udemy from "../../assets/images/udemy-logo.png"
 
 export default function Homepage() {
   return (
@@ -10,7 +17,7 @@ export default function Homepage() {
           <div className="flex w-96 flex-col gap-16">
             <Card
               title="AWS Suite"
-              image="/AWS-logo.png"
+              image={aws}
               alt="AWS Logo"
               width="w-64"
               button="CyberLab"
@@ -19,7 +26,7 @@ export default function Homepage() {
             />
             <Card
               title="Splunk"
-              image="/Splunk-logo.png"
+              image={splunk}
               alt="Splunk Enterprise Logo"
               width="w-72"
               button="Splunk SIEM"
@@ -28,7 +35,7 @@ export default function Homepage() {
             />
             <Card
               title="Tenable"
-              image="/Splunk-logo.png"
+              image={tenable}
               alt="Splunk Enterprise Logo"
               width="w-72"
               button="Splunk SIEM"
@@ -39,7 +46,7 @@ export default function Homepage() {
           <div className="flex w-96 flex-col gap-16">
             <Card
               title="Labs / Projects Board"
-              image="/Microsoft-Planner-logo.png"
+              image={planner}
               alt="Microsoft Planner logo"
               width="w-28"
               button="Planner Board"
@@ -48,7 +55,7 @@ export default function Homepage() {
             />
             <Card
               title="A Cloud Guru"
-              image="/acloudguru-logo.png"
+              image={acg}
               alt="A Cloud Guru logo"
               width="w-44"
               button="Courses"
@@ -57,7 +64,7 @@ export default function Homepage() {
             />
             <Card
               title="A Cloud Guru"
-              image="/acloudguru-logo.png"
+              image={acg}
               alt="A Cloud Guru logo"
               width="w-44"
               button="Courses"
@@ -68,7 +75,7 @@ export default function Homepage() {
           <div className="flex w-96 flex-col gap-16">
             <Card
               title="CrowdStrike Falcon"
-              image="/crowdstrike-logo.png"
+              image={crowdstrike}
               alt="CrowdStrike Falcon logo"
               width="w-44"
               button="Dashboard"
@@ -77,7 +84,7 @@ export default function Homepage() {
             />
             <Card
               title="Udemy"
-              image="/udemy-logo.png"
+              image={udemy}
               alt="Udemy logo"
               width="w-48"
               button="Courses"
@@ -86,7 +93,7 @@ export default function Homepage() {
             />
             <Card
               title="Udemy"
-              image="/udemy-logo.png"
+              image={udemy}
               alt="Udemy logo"
               width="w-48"
               button="Courses"
