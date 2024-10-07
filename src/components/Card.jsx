@@ -1,4 +1,5 @@
 import { FaChevronRight } from 'react-icons/fa6';
+import { BsFillInfoCircleFill } from 'react-icons/bs';
 
 export default function Card(props) {
   return (
@@ -7,15 +8,24 @@ export default function Card(props) {
         {props.title}
       </h2>
       <img src={props.image} alt={props.alt} className={`${props.width}`} />
-      <a
-        className={`flex w-64 flex-row items-center justify-end ${props.gap} rounded-full bg-[#163f44] p-4 text-xl duration-300 hover:scale-110`}
-        href={props.url}
-        target="_blank"
-        rel="noopener"
+      <div
+        className={`flex w-full flex-row items-center ${props.info ? 'justify-between' : 'justify-center'}`}
       >
-        <span>{props.button}</span>
-        <FaChevronRight />
-      </a>
+        {props.info && (
+          <a className="duration-300 hover:scale-110">
+            <BsFillInfoCircleFill size={'2.5rem'} />
+          </a>
+        )}
+        <a
+          className={`flex w-64 flex-row items-center justify-end ${props.gap} rounded-full bg-[#163f44] p-4 text-xl duration-300 hover:scale-110`}
+          href={props.url}
+          target="_blank"
+          rel="noopener"
+        >
+          <span>{props.button}</span>
+          <FaChevronRight />
+        </a>
+      </div>
     </div>
   );
 }
