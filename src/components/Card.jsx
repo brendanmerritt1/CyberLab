@@ -3,8 +3,8 @@ import { BsFillInfoCircleFill } from 'react-icons/bs';
 
 export default function Card(props) {
   return (
-    <div className="flex h-80 w-full flex-col items-center justify-between rounded-2xl bg-[#081f31] px-4 py-5">
-      <h2 className="text-center text-3xl font-semibold tracking-wide text-white">
+    <div className="flex h-80 w-full flex-col items-center justify-between rounded-2xl bg-gradient-to-t from-[#333c68] to-[#505d96] px-4 py-5 shadow-2xl">
+      <h2 className="text-center text-3xl font-semibold tracking-wide">
         {props.title}
       </h2>
       <img src={props.image} alt={props.alt} className={`${props.width}`} />
@@ -17,7 +17,7 @@ export default function Card(props) {
           </a>
         )}
         <a
-          className={`flex w-64 flex-row items-center justify-end ${props.gap} rounded-full bg-[#163f44] p-4 text-xl duration-300 hover:scale-110`}
+          className={`flex w-64 flex-row items-center justify-end ${props.gap} rounded-full bg-[#161D49] p-4 text-xl duration-300 hover:scale-110`}
           href={props.url}
           target="_blank"
           rel="noopener"
