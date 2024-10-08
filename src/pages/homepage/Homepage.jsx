@@ -42,32 +42,32 @@ export default function Homepage() {
         <div className="relative z-10 flex h-32 w-full flex-row gap-36 pl-28">
           <div
             className={`relative z-20 -translate-x-1 rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-t-2 border-[#5865a5] p-6 ${!isResources && 'h-24 rounded-bl-3xl rounded-br-3xl border-b-2'}`}
+            onClick={() => switchTab('resources')}
           >
             <HiOutlineSquares2X2
               size={'3rem'}
               color={isResources ? '#f0f3ff' : '#8892bf'}
               className="cursor-pointer duration-300 hover:scale-125"
-              onClick={() => switchTab('resources')}
             />
           </div>
           <div
             className={`relative h-24 rounded-3xl border-2 border-[#5865a5] p-6 ${isLearning && 'rounded-b-none border-b-0'}`}
+            onClick={() => switchTab('learning')}
           >
             <GiRibbonMedal
               size={'3rem'}
               color={isLearning ? '#f0f3ff' : '#8892bf'}
               className="cursor-pointer duration-300 hover:scale-125"
-              onClick={() => switchTab('learning')}
             />
           </div>
           <div
             className={`relative h-24 rounded-3xl border-2 border-[#5865a5] p-6 ${isLeaderboard && 'rounded-b-none border-b-0'}`}
+            onClick={() => switchTab('leaderboard')}
           >
             <MdOutlineLeaderboard
               size={'3rem'}
               color={isLeaderboard ? '#f0f3ff' : '#8892bf'}
               className="cursor-pointer duration-300 hover:scale-125"
-              onClick={() => switchTab('leaderboard')}
             />
           </div>
         </div>
