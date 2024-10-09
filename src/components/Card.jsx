@@ -13,11 +13,11 @@ export default function Card(props) {
       >
         {props.info && (
           <a className="duration-300 hover:scale-110">
-            <BsFillInfoCircleFill size={'2.5rem'} />
+            <BsFillInfoCircleFill className="laptop:size-[2.25rem] desktop:size-[2.5rem]" />
           </a>
         )}
         <a
-          className={`flex w-64 flex-row items-center justify-end ${props.gap} rounded-full bg-[#161D49] p-4 text-xl duration-300 hover:scale-110`}
+          className={`desktop:w-64 flex flex-row items-center justify-end ${props.gap} laptop:w-56 rounded-full bg-[#161D49] p-4 text-xl duration-300 hover:scale-110`}
           href={props.url}
           target="_blank"
           rel="noopener"
