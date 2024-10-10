@@ -80,7 +80,7 @@ export default function HomepageDesktop() {
           <>
             <div className="absolute bottom-10 left-[22.5rem] top-10 z-0 h-32 w-[6.25rem] -translate-x-1 rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-[#5865a5]" />
             <div className="absolute bottom-10 left-28 top-[10.5rem] z-0 w-28 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-t-2 border-[#5865a5]" />
-            <div className="absolute left-[22.4rem] top-[10.5rem] z-20 w-24 border-2 border-[#424b7c]"></div>
+            <div className="absolute left-[22.4rem] top-[10.5rem] z-20 w-24 border-2 border-[#484f7f]"></div>
           </>
         )}
 
@@ -88,7 +88,7 @@ export default function HomepageDesktop() {
           <>
             <div className="absolute bottom-10 left-[37.5rem] top-10 z-0 h-32 w-[6.25rem] rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-[#5865a5]" />
             <div className="absolute bottom-10 left-28 top-[10.5rem] z-0 w-28 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-t-2 border-[#5865a5]" />
-            <div className="absolute left-[37.65rem] top-[10.5rem] z-20 w-24 border-2 border-[#424b7c]"></div>
+            <div className="absolute left-[37.65rem] top-[10.5rem] z-20 w-24 border-2 border-[#484f7f]"></div>
           </>
         )}
 
@@ -192,10 +192,10 @@ export default function HomepageDesktop() {
             </>
           )}
           {isLearning && (
-            <span className="h-[30rem]">Learning Tracks Coming Soon!</span>
+            <span className="h-[50rem] block">Learning Tracks Coming Soon!</span>
           )}
           {isLeaderboard && (
-            <span className="h-[30rem]">Leaderboards Coming Soon!</span>
+            <span className="h-[50rem] block">Leaderboards Coming Soon!</span>
           )}
         </div>
       </div>
