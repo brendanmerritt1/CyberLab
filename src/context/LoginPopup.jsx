@@ -5,16 +5,14 @@ export default function LoginPopup(props) {
 
   return (
     <div className="fixed inset-0 bg-gray-700 bg-opacity-80">
-      <div className="fixed tabletHori:inset-40 tabletVert:inset-28 flex flex-col items-center rounded-3xl bg-[#161D49]">
+      <div className="fixed inset-40 flex flex-col items-center rounded-3xl bg-[#161D49] mobile:inset-0 mobile:bottom-60 mobile:left-10 mobile:right-10 mobile:top-36 tabletVert:inset-28">
         <div className="flex w-full flex-row pt-2">
-          <div className="desktop:w-[55%] laptop:w-[55%] tabletHori:w-[60%] tabletVert:w-[70%] text-end text-3xl">
+          <div className="text-end text-3xl tabletVert:w-[70%] tabletHori:w-[60%] laptop:w-[55%] desktop:w-[55%] mobile:text-2xl mobile:w-[75%]">
             <span>Login Page</span>
           </div>
-          <div className="desktop:w-[45%] laptop:w-[45%] tabletHori:w-[40%] tabletVert:w-[30%] pr-5 text-end">
+          <div className="pr-5 text-end tabletVert:w-[30%] tabletHori:w-[40%] laptop:w-[45%] desktop:w-[45%] mobile:w-[25%] mobile:pr-3">
             <button onClick={props.togglePopup}>
-              <IoMdClose
-                className="duration-300 hover:scale-125 tabletHori:size-[2.5rem] tabletVert:size-[2rem]"
-              />
+              <IoMdClose className="duration-300 hover:scale-125 size-[2rem] tabletVert:size-[2rem] tabletHori:size-[2.5rem]" />
             </button>
           </div>
         </div>
