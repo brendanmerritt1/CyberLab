@@ -13,7 +13,3 @@ applications:
         baseDirectory: dist
         files:
           - '**/*'
-      # Remove the cache section temporarily
-      cache:
-        paths:
-          - node_modules/**/*
