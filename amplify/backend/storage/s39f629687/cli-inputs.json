@@ -1,0 +1,14 @@
+{
+  "resourceName": "s39f629687",
+  "policyUUID": "9f629687",
+  "bucketName": "trianglecyber-cyberlab",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
