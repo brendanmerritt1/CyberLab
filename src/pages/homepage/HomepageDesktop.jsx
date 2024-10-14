@@ -100,7 +100,7 @@ export default function HomepageDesktop() {
               <div className="flex w-96 flex-col gap-16">
                 <Card
                   title="AWS Suite"
-                  image={aws}
+                  imageName="AWS-logo.png"
                   alt="AWS logo"
                   width="w-64"
                   button="CyberLab"
@@ -192,10 +192,12 @@ export default function HomepageDesktop() {
             </>
           )}
           {isLearning && (
-            <span className="h-[50rem] block">Learning Tracks Coming Soon!</span>
+            <span className="block h-[50rem]">
+              Learning Tracks Coming Soon!
+            </span>
           )}
           {isLeaderboard && (
-            <span className="h-[50rem] block">Leaderboards Coming Soon!</span>
+            <span className="block h-[50rem]">Leaderboards Coming Soon!</span>
           )}
         </div>
       </div>
