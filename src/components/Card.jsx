@@ -1,6 +1,5 @@
 import { FaChevronRight } from 'react-icons/fa6';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
-import ImageDisplay from './ImageDisplay';
 
 export default function Card(props) {
   return (
@@ -8,7 +7,6 @@ export default function Card(props) {
       <h2 className="text-center font-semibold tracking-wide tabletVert:text-xl tabletVert:leading-5 tabletHori:text-3xl mobile:text-xl mobile:leading-6">
         {props.title}
       </h2>
-      <ImageDisplay imageName={props.imageName} className={`${props.width}`} />
       <div
         className={`flex w-full items-center mobile:flex-col mobile:gap-4 tabletVert:flex-col tabletVert:gap-4 tabletHori:flex-row ${props.info ? 'justify-between' : 'justify-center'}`}
       >
