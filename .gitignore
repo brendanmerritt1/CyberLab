@@ -23,6 +23,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.env
+.env.development
+.env.production
 
 # amplify
 node_modules
