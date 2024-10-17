@@ -9,7 +9,7 @@ export default function Card(props) {
 
   useEffect(() => {
     const img = new Image();
-    img.src = `${process.env.REACT_APP_S3_BUCKET_URL}${props.imageName}`;
+    img.src = `${import.meta.env.VITE_S3_BUCKET}${props.imageName}`;
     img.onload = () => {
       setImgSrc(img.src);
       setLoadingImg(false);
