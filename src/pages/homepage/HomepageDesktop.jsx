@@ -1,15 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../../layout/Navbar.jsx';
 import Card from '../../components/Card.jsx';
-import aws from '../../assets/images/AWS-logo.png';
-import splunk from '../../assets/images/Splunk-logo.png';
-import tenable from '../../assets/images/tenable-logo.png';
-import planner from '../../assets/images/Microsoft-Planner-logo.png';
-import acg from '../../assets/images/acloudguru-logo.png';
-import crowdstrike from '../../assets/images/crowdstrike-logo.png';
-import udemy from '../../assets/images/udemy-logo.png';
-import learning from '../../assets/images/learning-resources-logo.png';
-import events from '../../assets/images/local-events-icon.png';
 import { HiOutlineSquares2X2 } from 'react-icons/hi2';
 import { MdOutlineLeaderboard } from 'react-icons/md';
 import { GiRibbonMedal } from 'react-icons/gi';
@@ -100,7 +91,7 @@ export default function HomepageDesktop() {
               <div className="flex w-96 flex-col gap-16">
                 <Card
                   title="AWS Suite"
-                  imageName="AWS-logo.png"
+                  imageName="logos/AWS-logo.png"
                   alt="AWS logo"
                   width="w-64"
                   button="CyberLab"
@@ -110,7 +101,7 @@ export default function HomepageDesktop() {
                 />
                 <Card
                   title="Splunk"
-                  image={splunk}
+                  imageName="logos/Splunk-logo.png"
                   alt="Splunk Enterprise logo"
                   width="w-72"
                   button="Splunk SIEM"
@@ -120,7 +111,7 @@ export default function HomepageDesktop() {
                 />
                 <Card
                   title="Tenable"
-                  image={tenable}
+                  imageName="logos/tenable-logo.png"
                   alt="Tenable logo"
                   width="w-64"
                   button="Dashboard"
@@ -132,7 +123,7 @@ export default function HomepageDesktop() {
               <div className="flex w-96 flex-col gap-16">
                 <Card
                   title="Labs / Projects Board"
-                  image={planner}
+                  imageName="logos/Microsoft-Planner-logo.png"
                   alt="Microsoft Planner logo"
                   width="w-28"
                   button="Planner Board"
@@ -142,7 +133,7 @@ export default function HomepageDesktop() {
                 />
                 <Card
                   title="A Cloud Guru"
-                  image={acg}
+                  imageName="logos/acloudguru-logo.png"
                   alt="A Cloud Guru logo"
                   width="w-44"
                   button="Courses"
@@ -152,7 +143,7 @@ export default function HomepageDesktop() {
                 />
                 <Card
                   title="Learning Resources"
-                  image={learning}
+                  imageName="logos/learning-resources-logo.png"
                   alt="Learning Resources logo"
                   width="w-52"
                   button="Resources"
@@ -162,7 +153,7 @@ export default function HomepageDesktop() {
               <div className="flex w-96 flex-col gap-16">
                 <Card
                   title="CrowdStrike Falcon"
-                  image={crowdstrike}
+                  imageName="logos/crowdstrike-logo.png"
                   alt="CrowdStrike Falcon logo"
                   width="w-44"
                   button="Dashboard"
@@ -172,7 +163,7 @@ export default function HomepageDesktop() {
                 />
                 <Card
                   title="Udemy"
-                  image={udemy}
+                  imageName="logos/udemy-logo.png"
                   alt="Udemy logo"
                   width="w-48"
                   button="Courses"
@@ -182,7 +173,7 @@ export default function HomepageDesktop() {
                 />
                 <Card
                   title="Local Events"
-                  image={events}
+                  imageName="logos/local-events-icon.png"
                   alt="Local events logo"
                   width="w-44"
                   button="Events"
