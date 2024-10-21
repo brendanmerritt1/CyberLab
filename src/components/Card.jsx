@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import InfoPopup from './InfoPopup';
 import { FaChevronRight } from 'react-icons/fa6';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
 import { Spinner } from '@chakra-ui/spinner';
@@ -6,6 +7,18 @@ import { Spinner } from '@chakra-ui/spinner';
 export default function Card(props) {
   const [loadingImg, setLoadingImg] = useState(true);
   const [imgSrc, setImgSrc] = useState(null);
+  const [infoIsOpen, setInfoIsOpen] = useState(false);
+  const [buttonIsOpen, setButtonIsOpen] = useState(false);
+
+  const toggleInfoPopup = () => setInfoIsOpen(!infoIsOpen);
+  const toggleButtonPopup = () => {
+    if (
+      (props.title == 'Learning Resources') |
+      (props.title == 'Local Events')
+    ) {
+      setButtonIsOpen(!buttonIsOpen);
+    }
+  };
 
   useEffect(() => {
     const img = new Image();
@@ -31,18 +44,36 @@ export default function Card(props) {
       >
         {props.info && (
           <a className="duration-300 hover:scale-110">
-            <BsFillInfoCircleFill className="mobile:size-[1.85rem] tabletVert:size-[1.5rem] tabletHori:size-[2rem] laptop:size-[2.25rem] desktop:size-[2.5rem]" />
+            <BsFillInfoCircleFill
+              onClick={toggleInfoPopup}
+              className="cursor-pointer mobile:size-[1.85rem] tabletVert:size-[1.5rem] tabletHori:size-[2rem] laptop:size-[2.25rem] desktop:size-[2.5rem]"
+            />
           </a>
         )}
+        {infoIsOpen && (
+          <InfoPopup
+            isOpen={infoIsOpen}
+            togglePopup={toggleInfoPopup}
+            title={props.title}
+          />
+        )}
         <a
-          className={`flex flex-row items-center justify-end desktop:w-64 ${props.gap} tabletVert:text-md rounded-full bg-[#161D49] duration-300 hover:scale-110 mobile:w-36 mobile:p-2 tabletVert:w-36 tabletVert:p-2 tabletHori:w-48 tabletHori:p-4 tabletHori:text-xl laptop:w-56`}
+          className={`flex cursor-pointer flex-row items-center justify-end desktop:w-64 ${props.gap} tabletVert:text-md rounded-full bg-[#161D49] duration-300 hover:scale-110 mobile:w-36 mobile:p-2 tabletVert:w-36 tabletVert:p-2 tabletHori:w-48 tabletHori:p-4 tabletHori:text-xl laptop:w-56`}
           href={props.url}
           target="_blank"
           rel="noopener"
+          onClick={toggleButtonPopup}
         >
           <span>{props.button}</span>
           <FaChevronRight />
         </a>
+        {buttonIsOpen && (
+          <InfoPopup
+            isOpen={buttonIsOpen}
+            togglePopup={toggleButtonPopup}
+            title={props.title}
+          />
+        )}
       </div>
     </div>
   );
