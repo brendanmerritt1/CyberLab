@@ -1,29 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../../layout/Navbar.jsx';
 import Card from '../../components/Card.jsx';
+import Leaderboard from '../leaderboard/Leaderboard.jsx';
+import Learning from '../learning-tracks/Learning.jsx';
 import { HiOutlineSquares2X2 } from 'react-icons/hi2';
 import { MdOutlineLeaderboard } from 'react-icons/md';
 import { GiRibbonMedal } from 'react-icons/gi';
 
 export default function HomepageTabletHori() {
-  const [isResources, setIsResources] = useState(true);
-  const [isLearning, setIsLearning] = useState(false);
-  const [isLeaderboard, setIsLeaderboard] = useState(false);
+  const [activeTab, setActiveTab] = useState('resources');
+
+  useEffect(() => {
+    const savedTab = localStorage.getItem('activeTab');
+    if (savedTab) {
+      setActiveTab(savedTab);
+    }
+  }, []);
 
   const switchTab = (tab) => {
-    if (tab == 'resources') {
-      setIsLearning(false);
-      setIsLeaderboard(false);
-      setIsResources(true);
-    } else if (tab == 'learning') {
-      setIsLeaderboard(false);
-      setIsResources(false);
-      setIsLearning(true);
-    } else {
-      setIsResources(false);
-      setIsLearning(false);
-      setIsLeaderboard(true);
-    }
+    setActiveTab(tab);
+    localStorage.setItem('activeTab', tab);
   };
 
   return (
@@ -32,61 +28,61 @@ export default function HomepageTabletHori() {
       <div className="relative mb-20 mt-20 flex w-[55rem] flex-col items-center rounded-[3rem] bg-gradient-to-b from-[#4b558b] via-[#374069] to-[#1F2545] py-10 shadow-2xl">
         <div className="relative z-10 flex h-32 w-full flex-row gap-24 pl-16">
           <div
-            className={`relative z-20 -translate-x-1 rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-t-2 border-[#5865a5] p-5 ${!isResources && 'h-20 rounded-bl-3xl rounded-br-3xl border-b-2'}`}
+            className={`relative z-20 -translate-x-1 rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-t-2 border-[#5865a5] p-5 ${activeTab !== 'resources' && 'h-20 rounded-bl-3xl rounded-br-3xl border-b-2'}`}
             onClick={() => switchTab('resources')}
           >
             <HiOutlineSquares2X2
               size={'2.5rem'}
-              color={isResources ? '#f0f3ff' : '#8892bf'}
+              color={activeTab === 'resources' ? '#f0f3ff' : '#8892bf'}
               className="cursor-pointer duration-300 hover:scale-125"
             />
           </div>
           <div
-            className={`relative h-20 rounded-3xl border-2 border-[#5865a5] p-5 ${isLearning && 'rounded-b-none border-b-0'}`}
+            className={`relative h-20 rounded-3xl border-2 border-[#5865a5] p-5 ${activeTab === 'learning' && 'rounded-b-none border-b-0'}`}
             onClick={() => switchTab('learning')}
           >
             <GiRibbonMedal
               size={'2.5rem'}
-              color={isLearning ? '#f0f3ff' : '#8892bf'}
+              color={activeTab === 'learning' ? '#f0f3ff' : '#8892bf'}
               className="cursor-pointer duration-300 hover:scale-125"
             />
           </div>
           <div
-            className={`relative h-20 rounded-3xl border-2 border-[#5865a5] p-5 ${isLeaderboard && 'rounded-b-none border-b-0'}`}
+            className={`relative h-20 rounded-3xl border-2 border-[#5865a5] p-5 ${activeTab === 'leaderboard' && 'rounded-b-none border-b-0'}`}
             onClick={() => switchTab('leaderboard')}
           >
             <MdOutlineLeaderboard
               size={'2.5rem'}
-              color={isLeaderboard ? '#f0f3ff' : '#8892bf'}
+              color={activeTab === 'leaderboard' ? '#f0f3ff' : '#8892bf'}
               className="cursor-pointer duration-300 hover:scale-125"
             />
           </div>
         </div>
 
-        {isResources && (
+        {activeTab === 'resources' && (
           <div className="absolute bottom-10 left-16 top-10 z-0 w-28 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-[#5865a5]" />
         )}
 
-        {isLearning && (
+        {activeTab === 'learning' && (
           <>
             <div className="absolute bottom-10 left-[15.5rem] top-10 z-0 h-32 w-[5.25rem] -translate-x-1 rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-[#5865a5]" />
-            <div className="absolute bottom-10 left-16 top-[10.5rem] z-0 w-28 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-t-2 border-[#5865a5]" />
-            <div className="absolute left-[15.4rem] top-[10.5rem] z-20 w-20 border-2 border-[#424b7c]"></div>
+            <div className="absolute bottom-10 left-16 top-[10.5rem] z-0 w-32 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-t-2 border-[#5865a5]" />
+            {/* <div className="absolute left-[15.4rem] top-[10.5rem] z-20 w-20 border-2 border-[#424b7c]"></div> */}
           </>
         )}
 
-        {isLeaderboard && (
+        {activeTab === 'leaderboard' && (
           <>
             <div className="absolute bottom-10 left-[26.5rem] top-10 z-0 h-32 w-[5.25rem] rounded-tl-3xl rounded-tr-3xl border-l-2 border-r-2 border-[#5865a5]" />
-            <div className="absolute bottom-10 left-16 top-[10.5rem] z-0 w-28 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-t-2 border-[#5865a5]" />
-            <div className="absolute left-[26.65rem] top-[10.5rem] z-20 w-20 border-2 border-[#424b7c]"></div>
+            <div className="absolute bottom-10 left-16 top-[10.5rem] z-0 w-32 -translate-x-1 rounded-bl-3xl rounded-tl-3xl border-b-2 border-l-2 border-t-2 border-[#5865a5]" />
+            {/* <div className="absolute left-[26.65rem] top-[10.5rem] z-20 w-20 border-2 border-[#485286]"></div> */}
           </>
         )}
 
         <div
-          className={`z-10 ml-12 flex w-[40rem] flex-row justify-between rounded-br-3xl rounded-tr-3xl border-b-2 border-r-2 border-t-2 border-[#5865a5] py-10 pr-10`}
+          className={`z-10 ${activeTab === 'resources' ? 'w-[40rem] pr-10' : 'w-[45rem]'} ${activeTab === 'learning' && 'ml-0 pr-4'} ml-12 flex flex-row justify-between rounded-br-3xl rounded-tr-3xl border-b-2 border-r-2 border-t-2 border-[#5865a5] py-10 pr-10`}
         >
-          {isResources && (
+          {activeTab === 'resources' && (
             <>
               <div className="flex w-72 flex-col gap-16">
                 <Card
@@ -180,12 +176,8 @@ export default function HomepageTabletHori() {
               </div>
             </>
           )}
-          {isLearning && (
-            <span className="h-[30rem]">Learning Tracks Coming Soon!</span>
-          )}
-          {isLeaderboard && (
-            <span className="h-[30rem]">Leaderboards Coming Soon!</span>
-          )}
+          {activeTab === 'learning' && <Learning />}
+          {activeTab === 'leaderboard' && <Leaderboard />}
         </div>
       </div>
     </div>

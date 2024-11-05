@@ -5,16 +5,11 @@ const schema = a.schema({
     .model({
       username: a.string(),
       points: a.integer(),
-      pointsHistory: a.json(
-        // a.customType({
-        //   timestamp: a.timestamp(),
-        //   points: a.integer(),
-        // })
-      ),
+      pointsHistory: a.json(),
     })
     .authorization((allow) => [
-      allow.owner(),
       allow.authenticated().to(['read']),
+      allow.guest().to(['read', 'create']),
     ]),
 });
 
