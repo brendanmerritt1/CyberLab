@@ -25,8 +25,8 @@ export default function Learning() {
         imageName="learning/machine-learning.png"
       />
       <LearningCard
-        title="Incident Response"
-        imageName="learning/incident-response.png"
+        title="Digital Forensics"
+        imageName="learning/digital-forensics.png"
       />
       <LearningCard title="API Security & Dev" imageName="learning/api.png" />
       <LearningCard

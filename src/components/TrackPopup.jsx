@@ -1,7 +1,25 @@
+import { useEffect } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { motion } from 'framer-motion';
+import Certifications from '../pages/learning-tracks/Certifications';
+import Cloud from '../pages/learning-tracks/Cloud';
+import Cybersecurity from '../pages/learning-tracks/Cybersecurity';
+import Visualization from '../pages/learning-tracks/Visualization';
+import DevOps from '../pages/learning-tracks/DevOps';
+import ML from '../pages/learning-tracks/ML';
+import Forensics from '../pages/learning-tracks/Forensics';
+import API from '../pages/learning-tracks/API';
+import GRC from '../pages/learning-tracks/GRC';
 
 export default function TrackPopup(props) {
+  useEffect(() => {
+    if (props.isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [props.isOpen]);
+
   if (!props.isOpen) return null;
 
   return (
@@ -29,8 +47,16 @@ export default function TrackPopup(props) {
             </button>
           </div>
         </div>
-        <div className="my-10 flex h-full max-h-[70vh] flex-col gap-20 overflow-y-auto">
-          {/* {props.title == 'AWS Suite' && <AWSSuite />} */}
+        <div className="my-10 flex h-full max-h-[70vh] w-full flex-col items-center gap-20 overflow-y-auto">
+          {props.title == 'Certification Prep' && <Certifications />}
+          {props.title == 'Cloud Fundamentals' && <Cloud />}
+          {props.title == 'Cybersecurity Essentials' && <Cybersecurity />}
+          {props.title == 'Data & Visualization' && <Visualization />}
+          {props.title == 'DevOps & Automation' && <DevOps />}
+          {props.title == 'ML in Cybersecurity' && <ML />}
+          {props.title == 'Digital Forensics' && <Forensics />}
+          {props.title == 'API Security & Dev' && <API />}
+          {props.title == 'Governance & Compliance' && <GRC />}
         </div>
       </motion.div>
     </div>

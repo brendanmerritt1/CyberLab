@@ -11,6 +11,20 @@ const schema = a.schema({
       allow.authenticated().to(['read']),
       allow.guest().to(['read', 'create']),
     ]),
+
+  LearningTracks: a
+    .model({
+      username: a.string(),
+      trackName: a.string(),
+      modulesCompleted: a.json(),
+      totalPointsInTrack: a.integer(),
+      pointsEarned: a.integer(),
+      completionPercentage: a.float(),
+    })
+    .authorization((allow) => [
+      allow.authenticated().to(['read']),
+      allow.guest().to(['read', 'create']),
+    ]),
 });
 
 export type Schema = ClientSchema<typeof schema>;

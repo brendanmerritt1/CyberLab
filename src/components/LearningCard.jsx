@@ -41,13 +41,11 @@ export default function LearningCard(props) {
           </h3>
         </div>
       </div>
-      {trackOpen && (
-        <TrackPopup
-          isOpen={trackOpen}
-          togglePopup={toggleTrackPopup}
-          title={props.title}
-        />
-      )}
+      <TrackPopup
+        isOpen={trackOpen}
+        togglePopup={toggleTrackPopup}
+        title={props.title}
+      />
     </>
   );
 }

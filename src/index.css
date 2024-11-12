@@ -15,3 +15,149 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.learning-plan {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Left column, center line, right column */
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+/* Module styling */
+.module {
+  width: 100%;
+  position: relative;
+}
+
+/* Left and right column module positioning */
+.module-left {
+  grid-column: 1 / 2; /* Left column */
+}
+
+.module-right {
+  grid-column: 3 / 4; /* Right column */
+}
+
+/* Dotted line in center column */
+.line {
+  position: absolute;
+  top: -3.3rem;
+  left: 50%;
+  width: 2px;
+  height: 6.6rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 4px,
+    #bbb 4px,
+    #bbb 12px
+  );
+}
+
+/* Connecting line from each module to center dotted line */
+.module-left::after,
+.module-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  /* width: 2.6rem; */
+  width: 1.5rem;
+  height: 2px;
+}
+
+.module-left::after {
+  right: -0.1rem; /* Line from left module pointing to center */
+  background: repeating-linear-gradient(
+    to left,
+    transparent 0px,
+    transparent 4px,
+    #bbb 4px,
+    #bbb 10px
+  );
+}
+
+.module-right::after {
+  left: -0.1rem; /* Line from right module pointing to center */
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 4px,
+    #bbb 4px,
+    #bbb 10px
+  );
+}
+
+/* Small dot at intersection */
+.module-left::before,
+.module-right::before {
+  content: '';
+  position: absolute;
+  top: 50%; /* Center vertically */
+  width: 8px; /* Diameter of the dot */
+  height: 8px; /* Diameter of the dot */
+  border-radius: 50%; /* Make it round */
+  background-color: #bbb; /* Color of the dot */
+  transform: translateY(-50%); /* Center the dot vertically */
+}
+
+.module-left::before {
+  left: calc(100% - 1.9rem); /* Position to the right of the module */
+}
+
+.module-right::before {
+  right: calc(100% - 1.9rem); /* Position to the right of the module */
+}
+
+/* Curved connector */
+.curved-connector-tr {
+  position: absolute;
+  top: -4rem; /* Adjust based on your layout */
+  left: calc(50% - 0.9rem); /* Center it in the middle */
+  width: 1rem; /* Adjust the width for the curve */
+  height: 1rem; /* Adjust the height for the curve */
+  border-right: 2px dashed #bbb; /* Dotted line color and style */
+  border-top: 2px dashed #bbb; /* Dotted line color and style */
+  border-top-right-radius: 2rem; /* Create the curve */
+  border-top-width: 0.2rem;
+  background-color: transparent; /* Transparent background */
+}
+
+.curved-connector-bl {
+  position: absolute;
+  top: 3.2rem; /* Adjust based on your layout */
+  left: calc(50% - 0rem); /* Center it in the middle */
+  width: 1rem; /* Adjust the width for the curve */
+  height: 1rem; /* Adjust the height for the curve */
+  border-left: 2px dashed #bbb; /* Dotted line color and style */
+  border-bottom: 2px dashed #bbb; /* Dotted line color and style */
+  border-bottom-left-radius: 2rem; /* Create the curve */
+  border-bottom-width: 0.2rem;
+  background-color: transparent; /* Transparent background */
+}
+
+.curved-connector-tl {
+  position: absolute;
+  top: 4rem; /* Adjust based on your layout */
+  left: calc(50% - 0rem); /* Center it in the middle */
+  width: 1rem; /* Adjust the width for the curve */
+  height: 1rem; /* Adjust the height for the curve */
+  border-left: 2px dashed #bbb; /* Dotted line color and style */
+  border-top: 2px dashed #bbb; /* Dotted line color and style */
+  border-top-left-radius: 2rem; /* Create the curve */
+  border-top-width: 0.2rem;
+  background-color: transparent; /* Transparent background */
+}
+
+.curved-connector-br {
+  position: absolute;
+  top: 3.1rem; /* Adjust based on your layout */
+  left: calc(50% - 0.9rem); /* Center it in the middle */
+  width: 1rem; /* Adjust the width for the curve */
+  height: 1rem; /* Adjust the height for the curve */
+  border-right: 2px dashed #bbb; /* Dotted line color and style */
+  border-bottom: 2px dashed #bbb; /* Dotted line color and style */
+  border-bottom-right-radius: 2rem; /* Create the curve */
+  border-bottom-width: 0.2rem;
+  background-color: transparent; /* Transparent background */
+}
