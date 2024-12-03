@@ -49,7 +49,7 @@ export default function LoginPopup(props) {
             username_short,
             trackUtils.trackDetails
           );
-          toast.success(`Account creation successful! Please sign in.`, {
+          toast.success('Account creation successful! Please sign in.', {
             position: 'top-center',
             autoClose: 5000,
             hideProgressBar: false,
