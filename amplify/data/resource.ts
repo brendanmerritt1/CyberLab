@@ -8,7 +8,7 @@ const schema = a.schema({
       pointsHistory: a.json(),
     })
     .authorization((allow) => [
-      allow.authenticated().to(['read']),
+      allow.authenticated().to(['read', 'update']),
       allow.guest().to(['read', 'create']),
     ]),
 
@@ -22,7 +22,7 @@ const schema = a.schema({
       completionPercentage: a.float(),
     })
     .authorization((allow) => [
-      allow.authenticated().to(['read']),
+      allow.authenticated().to(['read', 'update']),
       allow.guest().to(['read', 'create']),
     ]),
 });

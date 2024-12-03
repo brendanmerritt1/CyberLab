@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Spinner } from '@chakra-ui/spinner';
 import TrackPopup from './TrackPopup';
+import * as trackUtils from '../utils/LearningTrackUtils.js';
 
 export default function LearningCard(props) {
   const [loadingImg, setLoadingImg] = useState(true);
   const [imgSrc, setImgSrc] = useState(null);
   const [trackOpen, setTrackOpen] = useState(false);
+  const [completion, setCompletion] = useState('0.0%');
 
   const toggleTrackPopup = () => setTrackOpen(!trackOpen);
 
@@ -17,6 +19,20 @@ export default function LearningCard(props) {
       setLoadingImg(false);
     };
   }, [props.imageName]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (props.user != null) {
+        const percentage = await trackUtils.fetchCompletedPercentage(
+          props.user,
+          props.title
+        );
+        setCompletion(percentage);
+      }
+    };
+
+    fetchData();
+  }, [props.user, props.modules]);
 
   return (
     <>
@@ -34,7 +50,7 @@ export default function LearningCard(props) {
         </h2>
         <div className="flex flex-row gap-1">
           <h3 className="text-green-300 mobile:ml-1 mobile:text-sm tabletVert:ml-2 tabletVert:text-base">
-            0%
+            {completion}
           </h3>
           <h3 className="text-gray-400 mobile:text-sm tabletVert:text-base">
             Complete
@@ -45,6 +61,9 @@ export default function LearningCard(props) {
         isOpen={trackOpen}
         togglePopup={toggleTrackPopup}
         title={props.title}
+        modules={props.modules}
+        updateModule={props.updateModule}
+        user={props.user}
       />
     </>
   );

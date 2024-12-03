@@ -148,17 +148,34 @@ export const colorMap = async () => {
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
-  const { data: leaderboardList } = await client.models.Leaderboard.list();
-
-  if (leaderboardList) {
-    const colors = {};
-
-    leaderboardList.forEach((user, index) => {
-      colors[user.username] = getRandomColor(index, leaderboardList.length);
+  try {
+    const { data: leaderboardList } = await client.models.Leaderboard.list({
+      authMode: 'identityPool',
     });
-    return colors;
-  } else {
-    return {};
+    if (leaderboardList) {
+      const colors = {};
+
+      leaderboardList.forEach((user, index) => {
+        colors[user.username] = getRandomColor(index, leaderboardList.length);
+      });
+      return colors;
+    } else {
+      return {};
+    }
+  } catch {
+    const { data: leaderboardList } = await client.models.Leaderboard.list({
+      authMode: 'userPool',
+    });
+    if (leaderboardList) {
+      const colors = {};
+
+      leaderboardList.forEach((user, index) => {
+        colors[user.username] = getRandomColor(index, leaderboardList.length);
+      });
+      return colors;
+    } else {
+      return {};
+    }
   }
 };
 

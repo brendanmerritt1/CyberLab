@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 import '@aws-amplify/ui-react/styles.css';
 import { Authenticator } from '@aws-amplify/ui-react';
 import { signUp } from 'aws-amplify/auth';
-import * as utils from '../utils/LeaderboardUtils.js';
+import * as leaderboardUtils from '../utils/LeaderboardUtils.js';
+import * as trackUtils from '../utils/LearningTrackUtils.js';
+import { toast, Bounce } from 'react-toastify';
 
 export default function LoginPopup(props) {
   const [error, setError] = useState(null);
@@ -42,7 +44,22 @@ export default function LoginPopup(props) {
         });
 
         if (signUpResult) {
-          await utils.addEntry(username_short);
+          await leaderboardUtils.addEntry(username_short);
+          await trackUtils.initAllTracks(
+            username_short,
+            trackUtils.trackDetails
+          );
+          toast.success(`Account creation successful! Please sign in.`, {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: 'light',
+            transition: Bounce,
+          });
         }
 
         return signUpResult;

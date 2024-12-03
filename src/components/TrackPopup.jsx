@@ -48,15 +48,78 @@ export default function TrackPopup(props) {
           </div>
         </div>
         <div className="my-10 flex h-full max-h-[70vh] w-full flex-col items-center gap-20 overflow-y-auto">
-          {props.title == 'Certification Prep' && <Certifications />}
-          {props.title == 'Cloud Fundamentals' && <Cloud />}
-          {props.title == 'Cybersecurity Essentials' && <Cybersecurity />}
-          {props.title == 'Data & Visualization' && <Visualization />}
-          {props.title == 'DevOps & Automation' && <DevOps />}
-          {props.title == 'ML in Cybersecurity' && <ML />}
-          {props.title == 'Digital Forensics' && <Forensics />}
-          {props.title == 'API Security & Dev' && <API />}
-          {props.title == 'Governance & Compliance' && <GRC />}
+          {props.title == 'Certification Prep' && (
+            <Certifications
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'Cloud Fundamentals' && (
+            <Cloud
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'Cybersecurity Essentials' && (
+            <Cybersecurity
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'Data & Visualization' && (
+            <Visualization
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'DevOps & Automation' && (
+            <DevOps
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'ML in Cybersecurity' && (
+            <ML
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'Digital Forensics' && (
+            <Forensics
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'API Security & Dev' && (
+            <API
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
+          {props.title == 'Governance & Compliance' && (
+            <GRC
+              modules={props.modules}
+              trackName={props.title}
+              user={props.user}
+              updateModule={props.updateModule}
+            />
+          )}
         </div>
       </motion.div>
     </div>
