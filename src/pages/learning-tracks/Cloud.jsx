@@ -206,7 +206,7 @@ export default function Cloud(props) {
           <a
             className="module module-left flex flex-col items-center"
             style={{ gridRow: 9 }}
-            href="about:blank"
+            href="https://forms.office.com/r/dgMBReTJJm"
             target="_blank"
             rel="noopener noreferrer"
           >
