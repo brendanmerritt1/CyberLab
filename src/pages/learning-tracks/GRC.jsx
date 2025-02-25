@@ -117,7 +117,7 @@ export default function GRC(props) {
           <a
             className="module module-right flex flex-col items-center"
             style={{ gridRow: 3 }}
-            href="about:blank"
+            href="https://forms.office.com/r/nRNKxugfmt"
             target="_blank"
             rel="noopener noreferrer"
           >
